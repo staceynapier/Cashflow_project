@@ -9,5 +9,6 @@ class SqlRunner
     ensure
       db.close
     end
+  end
 
 end
