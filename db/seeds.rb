@@ -20,3 +20,36 @@ tag5.save
 
 tag6 = Tag.new({ 'type' => 'Miscellaneous', 'icon' => '../public/misc_icon.tiff' })
 tag6.save
+
+
+transaction1 = Transaction.new({ 
+  'merchant' => 'Chanter', 
+  'value' => '300', 
+  'date_of_trans' => 'Jul-18-2017', 
+  'tag_id' => tag3.id 
+  })
+transaction1.save
+
+transaction2 = Transaction.new({ 
+  'merchant' => 'Co-op', 
+  'value' => '699', 
+  'date_of_trans' => 'Jul-15-2017', 
+  'tag_id' => tag1.id 
+  })
+transaction2.save
+
+transaction3 = Transaction.new({ 
+  'merchant' => 'Landlord', 
+  'value' => '30000', 
+  'date_of_trans' => 'Jul-20-2017', 
+  'tag_id' => tag2.id 
+  })
+transaction3.save
+
+transaction4 = Transaction.new({
+  'merchant' => 'OVO Energy', 
+  'value' => '7200', 
+  'date_of_trans' => 'Jul-21-2017', 
+  'tag_id' => tag5.id 
+  })
+transaction4.save
