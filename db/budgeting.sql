@@ -10,7 +10,7 @@ CREATE TABLE tags (
 CREATE TABLE transactions (
   id SERIAL4 PRIMARY KEY,
   merchant VARCHAR(255),
-  price INT4,
+  value INT4,
   date_of_trans DATE,
   tag_id INT4 REFERENCES tags(id)
 );
