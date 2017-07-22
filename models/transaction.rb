@@ -41,6 +41,12 @@ class Transaction
     SqlRunner.run(sql)
   end
 
+  # def self.total_by_tag(tag_id)
+  #   all_results = Transaction.find_all[:tag_id]
+  #   total = 0
+  #   all_results.each { |transaction| total +=transaction.value}
+  #   return total
+  # end
 
 
 end
