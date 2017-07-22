@@ -8,7 +8,12 @@ get '/transactions' do
   erb(:"transactions/index")
 end
 
-get 'transactions/new' do
+get '/transactions/new' do
   @transactions = Transaction.find_all
   erb(:"transactions/new")
+end
+
+post '/transactions' do
+  Transaction.new(params).save
+  redirect to '/transactions'
 end

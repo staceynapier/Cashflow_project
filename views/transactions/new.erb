@@ -1,11 +1,35 @@
 <h1>Enter New Transaction Details</h1>
 
 
-<form action="/transactions" method="post">
+<form action="/transactions" method="POST">
   <div>
-    <label for="merchant">Merchant</label>
+    <label for="merchant">Merchant:</label>
     <input type="text" name="merchant" id="merchant">
   </div>
+
+  <div>
+    <label for="value">Value: £</label>
+    <input type="text" name="value" id="value">
+  </div>
+
+  <div>
+    <label for="date_of_transaction">Date of Transaction:</label>
+    <input type="date" name="date" id="date_of_transaction">
+  </div>
     
+  <div>
+    <label for="tag">Tag:</label>
+    <select>
+      <option value="bills">Bills</option>
+      <option value="clothes">Clothes</option>
+      <option value="entertainment">Entertainment</option>
+      <option value="food">Food</option>
+      <option value="rent">Rent/Mortgage</option>
+      <option value="misc">Miscellaneous</option>
+    </select>
+    </label>
+  </div>
   
+    <br><br>
+    <input type="submit">
 </form>
