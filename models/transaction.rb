@@ -16,7 +16,7 @@ class Transaction
   end
 
   def save
-    sql = "INSERT INTO transactions (merchant, value, date_of_trans, tag_id) VALUES ('#{@merchant}', '#{@value}', '#{@date_of_trans}', '#{@tag_id}') RETURNING id;"
+    sql = "INSERT INTO transactions (merchant, value, date_of_trans, tag_id) VALUES (#{@merchant}, #{@value}, #{@date_of_trans}, #{@tag_id}) RETURNING id;"
     transaction = SqlRunner.run(sql)[0]
     @id = transaction['id'].to_i
   end
@@ -50,6 +50,15 @@ class Transaction
      result = transactions.map { |transaction| Transaction.new(transaction) } 
      return result
      return transactions
+  end
+
+  # fix me
+
+  def self.total_by_tag
+    results = Transaction.find_by_tag(tag_id)
+    total = 0
+    results.each { |transaction| total += transaction.value }
+    return results
   end
 
 end
