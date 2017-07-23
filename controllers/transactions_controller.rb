@@ -14,6 +14,7 @@ get '/transactions/new' do
 end
 
 post '/transactions' do
-  Transaction.new(params).save
+  new_trans = Transaction.new(params)
+  new_trans.save
   redirect to '/transactions'
 end

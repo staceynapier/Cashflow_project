@@ -40,13 +40,16 @@ class Transaction
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
   end
+ 
 
-  # def self.total_by_tag(tag_id)
-  #   all_results = Transaction.find_all[:tag_id]
-  #   total = 0
-  #   all_results.each { |transaction| total +=transaction.value}
-  #   return total
-  # end
-
+  def self.find_by_tag(tag_id)
+    sql = "SELECT transactions.* FROM transactions
+      INNER JOIN tags ON tags.id = transactions.tag_id
+      WHERE transactions.tag_id = #{tag_id};"
+     transactions = SqlRunner.run(sql)
+     result = transactions.map { |transaction| Transaction.new(transaction) } 
+     return result
+     return transactions
+  end
 
 end

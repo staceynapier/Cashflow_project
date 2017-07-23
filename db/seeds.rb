@@ -57,8 +57,16 @@ transaction4 = Transaction.new({
   })
 transaction4.save
 
+transaction5 = Transaction.new({
+  'merchant' => 'Virgin', 
+  'value' => '4000', 
+  'date_of_trans' => 'Jul-22-2017', 
+  'tag_id' => tag5.id 
+  })
+transaction5.save
+
 binding.pry
 
 Transaction.find_all
-
+p Transaction.find_by_tag(9)
 nil

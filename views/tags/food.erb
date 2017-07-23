@@ -1,0 +1,20 @@
+<h1>Food</h1>
+
+<table>
+    <tr>
+      <th>Merchant</th>
+      <th>Value</th>
+      <th>Transaction Date</th>
+      <th>Type</th>
+    </tr>
+    <% for transaction in @food %>
+    <tr>
+      <td><%= transaction.merchant %></td>
+      <td><%= transaction.value %></td>
+      <td><%= transaction.date_of_trans %></td>
+      <td><%= transaction.tag_id %></td>  
+  </tr>
+    <% end %>
+</table>
+
+<img src="/food_icon.jpg" alt="Food" style="width:150px;height:150px";/>
