@@ -16,4 +16,5 @@
       </tr>
     <% end %>
 </table>
-<h2 class="total">Total = £<%= Transaction.total_of_all_transactions/100.to_f %></h2>
+<h2> Total of <%= transaction.type %> transactions = £<%= (@total_tag_value.to_f)/100 %></h2>
+<h2 class="total">Total of all transactions = £<%= Transaction.total_of_all_transactions/100.to_f %></h2>

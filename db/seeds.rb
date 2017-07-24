@@ -6,22 +6,22 @@ require_relative('../models/transaction.rb')
 Transaction.delete_all
 Tag.delete_all
 
-tag1 = Tag.new({ 'type' => 'Food', 'icon' => '../public/bills_icon.jpeg' })
+tag1 = Tag.new({ 'type' => 'Food', 'icon' => 'images/food_icon.jpg' })
 tag1.save
 
-tag2 = Tag.new({ 'type' => 'Rent', 'icon' => '../public/rent_icon.jpeg' })
+tag2 = Tag.new({ 'type' => 'Rent', 'icon' => 'images/rent_icon.jpg' })
 tag2.save
 
-tag3 = Tag.new({ 'type' => 'Entertainment', 'icon' => '../public/entertainment_icon.jpeg' })
+tag3 = Tag.new({ 'type' => 'Entertainment', 'icon' => 'images/entertainment_icon.jpg' })
 tag3.save
 
-tag4 = Tag.new({ 'type' => 'Clothes', 'icon' => '../public/clothes_icon.jpeg' })
+tag4 = Tag.new({ 'type' => 'Clothes', 'icon' => 'images/clothes_icon.jpg' })
 tag4.save
 
-tag5 = Tag.new({ 'type' => 'Bills', 'icon' => '../public/bills_icon.jpeg' })
+tag5 = Tag.new({ 'type' => 'Bills', 'icon' => 'images/bills_icon.jpg' })
 tag5.save
 
-tag6 = Tag.new({ 'type' => 'Miscellaneous', 'icon' => '../public/misc_icon.jpeg' })
+tag6 = Tag.new({ 'type' => 'Miscellaneous', 'icon' => 'images/misc_icon.jpg' })
 tag6.save
 
 
@@ -65,8 +65,5 @@ transaction5 = Transaction.new({
   })
 transaction5.save
 
-binding.pry
 
-Transaction.find_all
-p Transaction.find_by_tag(9)
 nil

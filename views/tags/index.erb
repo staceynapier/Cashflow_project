@@ -1,41 +1,12 @@
 <h1>Tags</h1>
 
 <ul>
-  <% @transactions.each do |transaction| %>
+  <% @tags.each do |tag| %>
   <li>
-    <a href="/transactions?type=1" title="Food">
-      <img src="/food_icon.jpg" alt="Food" style="width:150px;height:150px";/>
+    <a href="/transactions?type=<%= tag.id %>" >
+      <img title="<%= tag.type %>" src="<%= tag.icon %>" alt="<%= tag.type %>"/>
     </a>
-  </li>
-
-  <li>
-  <a href="/transactions?type=2">
-    <img src="/rent_icon.jpg" alt="Rent" style="width:150px;height:150px";/>
-  </a>
-  </li>
-
-  <li>
-  <a href="/transactions?type=3">
-    <img src="/entertainment_icon.jpg" alt="Entertainment" style="width:150px;height:150px";/>
-  </a>
-  </li>
-  
-  <li>
-  <a href="/transactions?type=4">
-    <img src="/clothes_icon.jpg" alt="Clothes" style="width:150px;height:150px";/>
-  </a>
-  </li>
-
-  <li>
-  <a href="/transactions?type=5">
-    <img src="/bills_icon.jpg" alt="Bills" style="width:150px;height:150px";/>
-  </a>
-  </li>
-
-  <li>
-  <a href="/transactions?type=6">
-    <img src="/misc_icon.jpg" alt="Miscellaneous" style="width:150px;height:150px";/>
-  </a>
+    <h2 class="total">Total of <%= tag.type %> transactions = £ <%=  @total_tag_value %></h2>
   </li>
   <% end %>
 

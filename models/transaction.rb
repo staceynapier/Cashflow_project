@@ -57,11 +57,11 @@ class Transaction
 
   # fix me
 
-  def self.total_by_tag
-    results = Transaction.find_by_tag(tag_id)
-    total = 0
-    results.each { |transaction| total += transaction.value }
-    return results
+  def self.total_by_tag(tag_id)
+    sql = "SELECT SUM (value) FROM transactions WHERE tag_id = #{tag_id};"
+      transactions = SqlRunner.run(sql)
+      amount = transactions.first['sum']
+      return amount
   end
 
 end

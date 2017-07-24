@@ -6,6 +6,7 @@ require_relative('../models/transaction')
 get '/transactions' do
   if params['type'] != nil
     @transactions = Transaction.find_by_tag(params['type'])
+    @total_tag_value = Transaction.total_by_tag(params['type'])
   else
     @transactions = Transaction.find_all
   end
