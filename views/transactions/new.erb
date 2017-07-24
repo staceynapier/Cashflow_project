@@ -14,21 +14,20 @@
 
   <div>
     <label for="date_of_transaction">Date of Transaction:</label>
-    <input type="date" name="date" id="date_of_transaction">
+    <input type="date" name="date_of_trans" id="date_of_transaction">
   </div>
     
   <div>
     <label for="tag">Tag:</label>
-    <select>
-      <option value="bills">Bills</option>
-      <option value="clothes">Clothes</option>
-      <option value="entertainment">Entertainment</option>
-      <option value="food">Food</option>
-      <option value="rent">Rent/Mortgage</option>
-      <option value="misc">Miscellaneous</option>
+    <select name='tag_id' id='tag'>
+      <% @tags.each do |tag| %>
+      <option value=<%= tag.id %>><%= tag.type.capitalize %></option>
+      <% end %>
     </select>
     </label>
   </div>
+
+
   
     <br><br>
     <input type="submit">

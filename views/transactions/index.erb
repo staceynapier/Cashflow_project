@@ -8,12 +8,12 @@
     <th>Type</th>
   </tr>
     <% for transaction in @transactions %>
-  <tr>
-    <td><%= transaction.merchant %></td>
-    <td><%= transaction.value/100.to_f %></td>
-    <td><%= transaction.date_of_trans %></td>
-    <td><%= transaction.tag_id %></td>  
-  </tr>
+      <tr>
+        <td><%= transaction.merchant %></td>
+        <td><%= transaction.value/100.to_f %></td>
+        <td><%= transaction.date_of_trans %></td>
+        <td><%= transaction.type %></td>  
+      </tr>
     <% end %>
 </table>
 <h2 class="total">Total = £<%= Transaction.total_of_all_transactions/100.to_f %></h2>
