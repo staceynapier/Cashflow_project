@@ -10,7 +10,7 @@ class Transaction
 
   def initialize(options)
     @merchant = options['merchant'].capitalize
-    @value = options['value'].to_i
+    @value = options['value'].to_f
     @date_of_trans = options['date_of_trans']
     @tag_id = options['tag_id'].to_i
     @type = options['type']
@@ -23,6 +23,17 @@ class Transaction
     @id = transaction['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM transactions WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    result = SqlRunner.run(sql).first
+    return Transaction.new(result)
+  end
+
   def self.total_of_all_transactions
     all_results = Transaction.find_all
     total = 0
@@ -31,7 +42,7 @@ class Transaction
   end
 
   def self.find_all
-    sql = "SELECT * FROM transactions, tags
+    sql = "SELECT transactions.*, tags.type FROM transactions, tags
           WHERE transactions.tag_id = tags.id
           ORDER BY date_of_trans DESC;"
     transactions = SqlRunner.run(sql)
