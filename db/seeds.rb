@@ -2,6 +2,7 @@ require('pg')
 require('pry')
 require_relative('../models/tag.rb')
 require_relative('../models/transaction.rb')
+require_relative('../models/wallet.rb')
 
 Transaction.delete_all
 Tag.delete_all
@@ -65,5 +66,9 @@ transaction5 = Transaction.new({
   })
 transaction5.save
 
-
+wallet1 = Wallet.new({
+  'budget' => '1000.00'
+  })
+binding.pry
+wallet1.save
 nil

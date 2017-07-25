@@ -1,4 +1,4 @@
-DROP TABLE wallet;
+DROP TABLE wallets;
 DROP TABLE transactions;
 DROP TABLE tags;
 
@@ -16,7 +16,7 @@ CREATE TABLE transactions (
   tag_id INT4 REFERENCES tags(id)
 );
 
-CREATE TABLE wallet (
+CREATE TABLE wallets (
   id SERIAL4 PRIMARY KEY,
   budget NUMERIC
 );

@@ -6,12 +6,16 @@ require_relative('./models/tag')
 require_relative('./models/transaction')
 require_relative('./models/wallet')
 
+set :wallet_id => 1
+
 get '/' do
+  @wallet = Wallet.find(settings.wallet_id)
   erb (:index)
 end
 
-post '/' do
-  new_wallet = Wallet.new(params)
-  new_wallet.save
+post '/wallets/:id' do
+  wallet = Wallet.find(params[:id])
+  wallet.budget = params[:budget]
+  wallet.update
   redirect to ('/')
 end
