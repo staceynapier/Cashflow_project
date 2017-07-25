@@ -1,4 +1,4 @@
-<h1>Transactions</h1>
+<h2>Transactions</h2>
 
 <table>
   <tr>
@@ -10,11 +10,12 @@
     <% for transaction in @transactions %>
       <tr>
         <td><%= transaction.merchant %></td>
-        <td><%= transaction.value/100.to_f %></td>
+        <td><%= transaction.value.to_f %></td>
         <td><%= transaction.date_of_trans %></td>
         <td><%= transaction.type %></td>  
       </tr>
     <% end %>
 </table>
-<h2> Total of <%= transaction.type %> transactions = £<%= (@total_tag_value.to_f)/100 %></h2>
+<!-- write in if statement -->
+<h2 class="total">Total of <%= transaction.type %> transactions = £<%= (@total_tag_value.to_f)/100 %></h2>
 <h2 class="total">Total of all transactions = £<%= Transaction.total_of_all_transactions/100.to_f %></h2>

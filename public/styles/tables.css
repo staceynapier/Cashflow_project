@@ -7,3 +7,7 @@ table {
 td {
   text-align: center; 
 }
+
+.input_form {
+  padding-bottom: 80%;
+}
