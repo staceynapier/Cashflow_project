@@ -14,7 +14,19 @@
         <td><%= transaction.description %></td>
         <td>£<%= transaction.value %></td>
         <td><%= transaction.date_of_trans %></td>
-        <td><%= transaction.type %></td>  
+          <% if transaction.type == "Bills" %>
+            <td class="type-bill"><%= transaction.type %></td> 
+          <% elsif transaction.type == "Entertainment" %>
+            <td class="type-ent"><%= transaction.type %></td>%>
+          <% elsif transaction.type == "Food" %>
+            <td class="type-food"><%= transaction.type %></td>%>
+          <% elsif transaction.type == "Rent" %>
+            <td class="type-rent"><%= transaction.type %></td>%> 
+          <% elsif transaction.type == "Clothes" %>
+            <td class="type-clothes"><%= transaction.type %></td>%> 
+          <% else %>
+            <td><%= transaction.type %></td>
+          <% end %> 
         <td>
           <form method="post" action="/transactions/<%= transaction.id %>">
             <input type="hidden" name="_method" value="delete"> 
@@ -24,7 +36,7 @@
       </tr>
     <% end %>
 </table>
-<!-- write in if statement -->
+
 <% if @total_tag_value != nil %>
 <h2 class="total">Total <%= transaction.type %> transactions = £<%= @total_tag_value.to_f.round(2) %></h2>
 <% end %>

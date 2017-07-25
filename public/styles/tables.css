@@ -1,7 +1,7 @@
 table {
-  width: 80%;
+  width: 90%;
   border: 0.5px solid black;
-  margin-left: 10%
+  margin-left: 5%
 }
 
 td {
@@ -10,4 +10,24 @@ td {
 
 .input_form {
   padding-bottom: 80%;
+}
+
+.type-bill {
+  color: red;
+}
+
+.type-ent {
+  color: orange;
+}
+
+.type-food {
+  color: green;
+}
+
+.type-rent {
+  color: purple;
+}
+
+.type-clothes {
+  color: blue;
 }

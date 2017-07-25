@@ -1,8 +1,8 @@
-<h2>Budget</h2>
+<h2>Wallet</h2>
 
 
 <form class="wallet_form" action="/wallets/<%= settings.wallet_id %>" method="post">
-    <label for="wallet">How much is in your wallet: £</label>
+    <label for="wallet">Update wallet balance: £</label>
     <input type="number" name="budget" id="budget" value="<%= @wallet.budget %>">
   <input type="submit">
 </form>
