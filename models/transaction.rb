@@ -6,10 +6,11 @@ require_relative('../db/sql_runner')
 class Transaction
 
   attr_reader :id, :tag_id, :type
-  attr_accessor :merchant, :value, :date_of_trans
+  attr_accessor :merchant, :value, :date_of_trans, :description
 
   def initialize(options)
     @merchant = options['merchant'].capitalize
+    @description = options['description']
     @value = options['value'].to_f
     @date_of_trans = options['date_of_trans']
     @tag_id = options['tag_id'].to_i
@@ -18,7 +19,8 @@ class Transaction
   end
 
   def save
-    sql = "INSERT INTO transactions (merchant, value, date_of_trans, tag_id) VALUES ('#{@merchant}', #{@value}, '#{@date_of_trans}', #{@tag_id}) RETURNING id;"
+    sql = "INSERT INTO transactions (merchant, description, value, date_of_trans, tag_id)
+       VALUES ('#{@merchant}', '#{@description}', #{@value}, '#{@date_of_trans}', #{@tag_id}) RETURNING id;"
         transaction = SqlRunner.run(sql)[0]
     @id = transaction['id'].to_i
   end
@@ -65,8 +67,6 @@ class Transaction
      result = transactions.map { |transaction| Transaction.new(transaction) } 
      return result
   end
-
-  # fix me
 
   def self.total_by_tag(tag_id)
     sql = "SELECT SUM (value) FROM transactions WHERE tag_id = #{tag_id};"

@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Merchant</th>
+    <th>Description</th>
     <th>Value</th>
     <th>Transaction Date</th>
     <th>Type</th>
@@ -10,6 +11,7 @@
     <% for transaction in @transactions %>
       <tr>
         <td><%= transaction.merchant %></td>
+        <td><%= transaction.description %></td>
         <td>£<%= transaction.value %></td>
         <td><%= transaction.date_of_trans %></td>
         <td><%= transaction.type %></td>  
