@@ -3,6 +3,7 @@
 <ul class="tag_list">
   <% @tags.each do |tag| %>
   <li>
+    <h4> <%= tag.type %></h4>
     <a href="/transactions?type=<%= tag.id %>" >
       <img title="<%= tag.type %>" src="<%= tag.icon %>" alt="<%= tag.type %>" name="<%= tag.type %>"/>
     </a>
