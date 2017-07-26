@@ -28,7 +28,7 @@ li {
   width: 100px;
   height: 100px;
   margin: 0;
-  border: 4px solid #66a3ff;
-  display: inline-flex;
-  justify-content: center
+  border: 4px solid #00004d;
+  display: flex;
+  justify-content: center;
 }

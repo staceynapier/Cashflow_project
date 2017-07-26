@@ -5,13 +5,13 @@
   <h3>Current Remaining Balance: £<%= (initial_budget -= total).round(2) %>
   </h3>
 
-<div class="wallets">
+<div>
   <% if (total >= @wallet.budget) %>
-    <img src="/images/wallet3.jpg" alt="empty wallet">
+    <img class="wallets" src="/images/wallet3.jpg" alt="empty wallet">
   <% elsif (total % initial_budget)*100 >= (initial_budget * 0.75) %>
-    <img src="/images/wallet2.jpg">
+    <img class="wallets" src="/images/wallet2.jpg">
   <% else %>
-    <img src="/images/wallet1.jpg">
+    <img class="wallets" src="/images/wallet1.jpg">
   <% end %>
 </div>
 
@@ -20,7 +20,7 @@
 
 <form class="wallet_form" action="/wallets/<%= settings.wallet_id %>" method="post">
     <label for="wallet">Update wallet balance: £</label>
-    <input type="number" name="budget" id="budget" 
+    <input type="number" name="budget" id="budget">
   <input type="submit">
 </form>
 
