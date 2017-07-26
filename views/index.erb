@@ -8,7 +8,7 @@
 <div class="wallet-structure">
   <% if (total >= @wallet.budget) %>
     <img class="wallets" src="/images/wallet3.jpg" alt="empty wallet">
-  <% elsif (total % initial_budget)*100 >= (initial_budget * 0.75) %>
+  <% elsif (total / initial_budget)*100 >= (initial_budget * 0.75) %>
     <img class="wallets" src="/images/wallet2.jpg">
   <% else %>
     <img class="wallets" src="/images/wallet1.jpg">
