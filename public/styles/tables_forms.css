@@ -1,6 +1,6 @@
 table {
   width: 90%;
-  border: 0.5px solid black;
+  border: 2px solid #00004d;
   border-radius: 20px;
   margin-left: 5%;
   padding: 5px;
@@ -16,7 +16,15 @@ td {
 }
 
 .input_form {
-  padding-bottom: 80%;
+  width: 90%;
+  padding: 10px;
+  margin left: 5%;
+  border: 2px solid #00004d;
+  border-radius: 20px;
+}
+
+.input_form div {
+  margin: 10px;
 }
 
 .type-bill {
@@ -42,5 +50,5 @@ td {
 .wallet-form {
   margin-left: auto;
   margin-right: auto;
-  justify-content: center
+  padding: 5px;
 }
