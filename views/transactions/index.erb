@@ -17,13 +17,13 @@
           <% if transaction.type == "Bills" %>
             <td class="type-bill"><%= transaction.type %></td> 
           <% elsif transaction.type == "Entertainment" %>
-            <td class="type-ent"><%= transaction.type %></td>%>
+            <td class="type-ent"><%= transaction.type %></td>
           <% elsif transaction.type == "Food" %>
-            <td class="type-food"><%= transaction.type %></td>%>
+            <td class="type-food"><%= transaction.type %></td>
           <% elsif transaction.type == "Rent" %>
-            <td class="type-rent"><%= transaction.type %></td>%> 
+            <td class="type-rent"><%= transaction.type %></td> 
           <% elsif transaction.type == "Clothes" %>
-            <td class="type-clothes"><%= transaction.type %></td>%> 
+            <td class="type-clothes"><%= transaction.type %></td> 
           <% else %>
             <td><%= transaction.type %></td>
           <% end %> 
