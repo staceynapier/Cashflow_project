@@ -4,7 +4,7 @@
   color: #00004d;
 }
 
-h2 {
+h2, h3 {
   text-align: center;
 }
 
@@ -15,5 +15,11 @@ body {
 
 .total {
   text-align: right
+}
+
+.button {
+  background-color: orange;
+  border: none;
+  color: #00004d;
 }
 
