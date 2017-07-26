@@ -1,4 +1,4 @@
-<h2>Wallet</h2>
+<h2>A snappier way to budget your finances</h2>
 
 <% initial_budget = @wallet.budget %>
 <% total = Transaction.total_of_all_transactions %>
@@ -7,18 +7,18 @@
 
 <div class="wallet-structure">
   <% if (total >= @wallet.budget) %>
-    <img class="wallets" src="/images/wallet3.jpg" alt="empty wallet">
+    <img class="wallets" src="/images/croc3.png" alt="angry crocodile">
   <% elsif (total / initial_budget)*100 >= (initial_budget * 0.75) %>
-    <img class="wallets" src="/images/wallet2.jpg">
+    <img class="wallets" src="/images/croc2.png" alt="medium crocodile">
   <% else %>
-    <img class="wallets" src="/images/wallet1.jpg">
+    <img class="wallets" src="/images/croc1.png" alt="happy croc">
   <% end %>
 </div>
 
 <% if @wallet.budget.to_s.length >= 4 %>
-<h3>Your initial wallet balance was £<%= @wallet.budget %>0</h3>
+  <h3>Your initial wallet balance was £<%= @wallet.budget %>0</h3>
 <%else%>
-<h3>Your initial wallet balance was £<%= @wallet.budget %></h3>
+  <h3>Your initial wallet balance was £<%= @wallet.budget %></h3>
 <% end%>
 
 <div class="wallet_form" >

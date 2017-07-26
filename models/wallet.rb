@@ -28,4 +28,5 @@ class Wallet
     result = SqlRunner.run(sql)
   end
 
+
 end
