@@ -1,4 +1,4 @@
-table {
+table, .input_form {
   width: 90%;
   border: 2px solid #00004d;
   border-radius: 20px;
@@ -13,14 +13,6 @@ th {
 
 td {
   text-align: center; 
-}
-
-.input_form {
-  width: 90%;
-  padding: 10px;
-  margin left: 5%;
-  border: 2px solid #00004d;
-  border-radius: 20px;
 }
 
 .input_form div {
