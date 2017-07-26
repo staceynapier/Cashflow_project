@@ -10,7 +10,20 @@ h2, h3 {
 
 body {
   background-color: #F0F8FF
-  
+  margin: 5px;
+  padding: 5px;
+  vertical-align: top
+}
+
+.croc {
+  width: 80px;
+  height: 75px;
+  border: 3px solid #00004d;
+  border-radius: 10px;
+  right: 5px;
+  top: 5px;
+  float: right;
+  position: sticky;
 }
 
 .total {
@@ -20,6 +33,7 @@ body {
 .button {
   background-color: orange;
   border: none;
+  border-radius: 5px;
   color: #00004d;
 }
 
